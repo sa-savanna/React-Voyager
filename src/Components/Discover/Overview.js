@@ -37,7 +37,7 @@ const Overview = () => {
             <Navigation country={country} />
             <div className="discover-wrapper">
                 <Topbar data={data} />
-                <Scroller
+                {/* <Scroller
                     setCity={setCity}
                     capital={data.capital}
                     country={country}
@@ -48,7 +48,7 @@ const Overview = () => {
                     center={center}
                     setCenter={setCenter}
                 />
-                <Weather placeId={placeId} center={center} />
+                <Weather placeId={placeId} center={center} /> */}
             </div>
         </>
     );

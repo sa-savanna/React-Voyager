@@ -2,7 +2,6 @@ import React from 'react'
 
 const Topbar = ({ data }) => {
 
-
   const population = () => {
     const str = data.population.toString()
     let two = str.substr(-6, 3);

@@ -66,7 +66,7 @@ const Scroller = Radium(({ setCity, capital, country, code }) => {
 
     return (
         <div className="scroller">
-           <input placeholder="Search city" onInput={handleInput} />
+            <input placeholder="Search city" onInput={handleInput} />
             <div className="timeline">
                 <ul>
                     {[capital, ...cities].map((city, key) => (
@@ -88,7 +88,8 @@ const Scroller = Radium(({ setCity, capital, country, code }) => {
                         </li>
                     ))}
                 </ul>
-            </div></div>
+            </div>
+        </div>
     );
 });
 

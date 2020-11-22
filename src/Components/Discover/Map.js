@@ -11,7 +11,8 @@ const key = process.env.REACT_APP_GOOGLE_KEY;
 
 
 const Map = ({ city, setPlaceId, center, setCenter }) => {
-    const [loading, setLoading] = useState(true)
+
+        const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         if (city) {

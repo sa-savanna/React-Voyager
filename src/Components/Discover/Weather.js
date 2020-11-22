@@ -8,11 +8,12 @@ const PhotoAPI = "https://maps.googleapis.com/maps/api/place/photo";
 const key = process.env.REACT_APP_GOOGLE_KEY;
 
 
+
 const Weather = ({ placeId, center }) => {
     const [photos, setPhotos] = useState([]);
     const [weatherObj, setWeatherObj] = useState(null);
     const [loading, setLoading] = useState(true)
-
+   
     useEffect(() => {
         // console.log(center);
         if (placeId) {
