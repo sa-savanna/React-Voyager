@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/sa-savanna/React-Voyager.git/static/css/main.39b3b70c.chunk.css",
+    "main.js": "/sa-savanna/React-Voyager.git/static/js/main.2fcfa34d.chunk.js",
+    "main.js.map": "/sa-savanna/React-Voyager.git/static/js/main.2fcfa34d.chunk.js.map",
+    "runtime-main.js": "/sa-savanna/React-Voyager.git/static/js/runtime-main.543c8fa4.js",
+    "runtime-main.js.map": "/sa-savanna/React-Voyager.git/static/js/runtime-main.543c8fa4.js.map",
+    "static/css/2.756c529d.chunk.css": "/sa-savanna/React-Voyager.git/static/css/2.756c529d.chunk.css",
+    "static/js/2.5c1245d7.chunk.js": "/sa-savanna/React-Voyager.git/static/js/2.5c1245d7.chunk.js",
+    "static/js/2.5c1245d7.chunk.js.map": "/sa-savanna/React-Voyager.git/static/js/2.5c1245d7.chunk.js.map",
+    "index.html": "/sa-savanna/React-Voyager.git/index.html",
+    "precache-manifest.53540e5381c908b2d92bb090da3675d0.js": "/sa-savanna/React-Voyager.git/precache-manifest.53540e5381c908b2d92bb090da3675d0.js",
+    "service-worker.js": "/sa-savanna/React-Voyager.git/service-worker.js",
+    "static/css/2.756c529d.chunk.css.map": "/sa-savanna/React-Voyager.git/static/css/2.756c529d.chunk.css.map",
+    "static/css/main.39b3b70c.chunk.css.map": "/sa-savanna/React-Voyager.git/static/css/main.39b3b70c.chunk.css.map",
+    "static/js/2.5c1245d7.chunk.js.LICENSE.txt": "/sa-savanna/React-Voyager.git/static/js/2.5c1245d7.chunk.js.LICENSE.txt",
+    "static/media/Brazil.jpg": "/sa-savanna/React-Voyager.git/static/media/Brazil.4987e8ac.jpg",
+    "static/media/France.jpg": "/sa-savanna/React-Voyager.git/static/media/France.96d56c45.jpg",
+    "static/media/Japan_1920.jpg": "/sa-savanna/React-Voyager.git/static/media/Japan_1920.8fdbb3a7.jpg",
+    "static/media/mdb.css": "/sa-savanna/React-Voyager.git/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/brussels-1920.jpg": "/sa-savanna/React-Voyager.git/static/media/brussels-1920.935e4756.jpg",
+    "static/media/all.min.css": "/sa-savanna/React-Voyager.git/static/media/fa-solid-900.ee09ad75.woff",
+    "static/media/globe_PNG62.png": "/sa-savanna/React-Voyager.git/static/media/globe_PNG62.79f9e07e.png",
+    "static/media/india_1920.jpg": "/sa-savanna/React-Voyager.git/static/media/india_1920.00c7443e.jpg",
+    "static/media/ukraine-kyiv_1920.jpg": "/sa-savanna/React-Voyager.git/static/media/ukraine-kyiv_1920.b9c55795.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.543c8fa4.js",
+    "static/css/2.756c529d.chunk.css",
+    "static/js/2.5c1245d7.chunk.js",
+    "static/css/main.39b3b70c.chunk.css",
+    "static/js/main.2fcfa34d.chunk.js"
+  ]
+}
