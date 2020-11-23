@@ -10,6 +10,7 @@ const Topbar = ({ data }) => {
     let one = str.substr(0, (str.length - str1.length));
     return one + " " + two + " " + three
   }
+  //doest'n work :(
 
   return (
     <nav className="topbar">
@@ -27,8 +28,8 @@ const Topbar = ({ data }) => {
           <small className="text-muted">Flag</small>
         </li>
         <li>
-          <p>{population}</p>
-          <small className="text-muted">Population, ppl</small>
+          <p>{(data.population / 1000000).toFixed(1)}</p>
+          <small className="text-muted">Population, mln</small>
         </li>
         <li>
           <p>

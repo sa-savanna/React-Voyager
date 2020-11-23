@@ -63,6 +63,10 @@ body {
 .navigation ul {
   display: flex;
 }
+
+.Toolbar a {
+  width: 90px;
+}
 .Toolbar a:hover {
   color: var(--dark);
   text-decoration: none;
@@ -134,59 +138,7 @@ body {
   border: 4px solid white;
 }
 
-/* ===================================================Cards */
-
-.container-todo {
-  display: grid;
-  grid-template-columns: 20% 1fr;
-}
-
-.sidebar {
-  margin-top: 2em;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1em;
-  margin: 2em;
-}
-
-.cards .card {
-  box-shadow: none;
-}
-
-.cards .card:hover {
-  box-shadow: 0px 10px 12px #8080806b;
-}
-
-.card .btn {
-  color: var(--light);
-  background-color: var(--blue) !important;
-}
-
-.card p {
-  color: var(--blue);
-  font-size: 14px;
-}
-
-.card h4 {
-  font-size: 1rem;
-}
-
-.card img {
-  width: 88%;
-  height: 150px;
-  margin: 5% auto;
-  object-fit: cover;
-}
-
-.card .btn {
-  font-size: 0.7rem;
-}
-
-/* ===================================================Scroller */
-
+/* ===============================================DISCOVER========== */
 .discover-wrapper {
   display: grid;
   grid-template: "topBar topBar topBar" "scroller map weather" "footer footer footer";
@@ -194,6 +146,43 @@ body {
   grid-template-rows: 10% 1fr 10%;
   position: relative;
 }
+/* ===================================================TopBar */
+
+.topbar {
+  grid-area: topBar;
+  /* overflow: hidden; */
+}
+
+.topbar ul {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.topbar ul li {
+  list-style-type: none;
+  border-left: 1px solid var(--lightgray);
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar ul li p {
+  margin: 0;
+}
+
+.topbar ul li small {
+  font-size: 12px;
+}
+
+/* ===================================================Scroller */
 
 .scroller {
   padding: 20px 0;
@@ -208,12 +197,12 @@ body {
 .timeline {
   grid-area: scroller;
   width: 100%;
-  height: 60vh;
+  height: 50vh;
   white-space: nowrap;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .timeline::-webkit-scrollbar {
@@ -261,42 +250,6 @@ body {
   height: 15px;
   width: 15px;
   left: 1px;
-}
-
-/* ===================================================TopBar */
-
-.topbar {
-  grid-area: topBar;
-  /* overflow: hidden; */
-}
-
-.topbar ul {
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 15px;
-  width: 100%;
-}
-
-.topbar ul li {
-  list-style-type: none;
-  border-left: 1px solid var(--lightgray);
-  padding-left: 0.7em;
-  padding-right: 0.7em;
-  font-size: 20px;
-  font-weight: bold;
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.topbar ul li p {
-  margin: 0;
-}
-
-.topbar ul li small {
-  font-size: 12px;
 }
 
 /* ===================================================Map */
@@ -365,6 +318,65 @@ body {
 
 .forecast-grid small {
   width: 40%;
+}
+
+/* ===================================================Cards */
+
+.container-todo {
+  display: grid;
+  grid-template-columns: 20vw auto;
+  grid-column-gap: 2rem;
+}
+
+.Sidebar {
+  grid-column: 1 / 2;
+  margin: 5rem;
+  /* background-color: turquoise; */
+}
+
+.Tabpanel {
+  grid-column: 2 / 3;
+  /* background-color: yellow; */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+  margin: 2em;
+}
+
+.cards .card {
+  box-shadow: none;
+}
+
+.cards .card:hover {
+  box-shadow: 0px 10px 12px #8080806b;
+}
+
+.card .btn {
+  color: var(--light);
+  background-color: var(--blue) !important;
+}
+
+.card p {
+  color: var(--blue);
+  font-size: 14px;
+}
+
+.card h4 {
+  font-size: 1rem;
+}
+
+.card img {
+  width: 88%;
+  height: 150px;
+  margin: 5% auto;
+  object-fit: cover;
+}
+
+.card .btn {
+  font-size: 0.7rem;
 }
 
 /* ===================================================Media */

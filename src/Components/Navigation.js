@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { NavLink } from 'react'
 import { Image } from 'react-bootstrap';
 import Globe from './Slider/img/globe_PNG62.png'
 import InputSearch from "./InputSearch"
@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '1rem',
         fontSize: '2rem'
     },
+
 }));
 
 
@@ -33,12 +34,15 @@ export const Navigation = ({ country }) => {
                     <Toolbar className="Toolbar">
                         <Image width="50px" src={Globe} />
                         <Typography variant="h6" className={classes.title}>
-                            {country.charAt(0).toUpperCase() + country.slice(1)}
+                            {country}
                         </Typography>
                         <InputSearch />
-                        <Link href="/" color="inherit">
+                        <Link className={classes.link} href="/" color="inherit">
                             Home
                         </Link>
+                        <Link className={classes.link} href={`/Voyager/#/whattodo/${country}`} color="inherit">
+                            Todo
+                        </Link> 
                     </Toolbar>
                 </AppBar>
             </div>

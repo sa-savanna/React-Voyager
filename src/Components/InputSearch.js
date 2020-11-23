@@ -27,7 +27,7 @@ const InputSearch = () => {
         <Autocomplete
             onChange={e => {
                 console.log(e.target.innerText)
-                window.location.href = `/overview/${e.target.innerText}`
+                window.location.href = `/Voyager/#/overview/${e.target.innerText}`
             }}
             style={{ flexGrow: 1 }}
             id="countryInput"

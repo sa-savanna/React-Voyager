@@ -31,7 +31,7 @@ const Carousel1 = () => {
                                         </MDBView>
                                         <MDBCarouselCaption>
                                             <h1 className="h1-responsive">{item.title}</h1>
-                                            <a type="button" href={`/overview/${item.title}`}>discover</a>
+                                            <a type="button" href={`/Voyager/#/overview/${item.title}`}>discover</a>
                                         </MDBCarouselCaption>
                                     </MDBCarouselItem>
                                 ))

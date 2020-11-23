@@ -5,8 +5,8 @@ import Spinner from "../Spinner/Spinner"
 const APIurl =
     "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details";
 const PhotoAPI = "https://maps.googleapis.com/maps/api/place/photo";
-const key = process.env.REACT_APP_GOOGLE_KEY;
-
+// const key = process.env.REACT_APP_GOOGLE_KEY;
+const key = 'AIzaSyDPUOSET_JlnAy_G8T1AFnMkExbJrz4UmE';
 
 
 const Weather = ({ placeId, center }) => {

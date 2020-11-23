@@ -6,7 +6,8 @@ import { FaLocationArrow } from 'react-icons/fa';
 
 let APIurl =
     "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch";
-const key = process.env.REACT_APP_GOOGLE_KEY;
+// const key = process.env.REACT_APP_GOOGLE_KEY;
+const key = 'AIzaSyDPUOSET_JlnAy_G8T1AFnMkExbJrz4UmE';
 
 
 
