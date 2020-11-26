@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/React-Voyager/static/css/main.59ab022d.chunk.css",
-    "main.js": "/React-Voyager/static/js/main.d1b201ef.chunk.js",
-    "main.js.map": "/React-Voyager/static/js/main.d1b201ef.chunk.js.map",
+    "main.js": "/React-Voyager/static/js/main.af98952c.chunk.js",
+    "main.js.map": "/React-Voyager/static/js/main.af98952c.chunk.js.map",
     "runtime-main.js": "/React-Voyager/static/js/runtime-main.4d0a3caa.js",
     "runtime-main.js.map": "/React-Voyager/static/js/runtime-main.4d0a3caa.js.map",
     "static/css/2.7710c4ff.chunk.css": "/React-Voyager/static/css/2.7710c4ff.chunk.css",
     "static/js/2.6a5624e8.chunk.js": "/React-Voyager/static/js/2.6a5624e8.chunk.js",
     "static/js/2.6a5624e8.chunk.js.map": "/React-Voyager/static/js/2.6a5624e8.chunk.js.map",
     "index.html": "/React-Voyager/index.html",
-    "precache-manifest.41fa617c1027e9713a4d2f5c92f100c8.js": "/React-Voyager/precache-manifest.41fa617c1027e9713a4d2f5c92f100c8.js",
+    "precache-manifest.1c857cf15fdf099b3e5ce3e4101e4388.js": "/React-Voyager/precache-manifest.1c857cf15fdf099b3e5ce3e4101e4388.js",
     "service-worker.js": "/React-Voyager/service-worker.js",
     "static/css/2.7710c4ff.chunk.css.map": "/React-Voyager/static/css/2.7710c4ff.chunk.css.map",
     "static/css/main.59ab022d.chunk.css.map": "/React-Voyager/static/css/main.59ab022d.chunk.css.map",
@@ -28,6 +28,6 @@
     "static/css/2.7710c4ff.chunk.css",
     "static/js/2.6a5624e8.chunk.js",
     "static/css/main.59ab022d.chunk.css",
-    "static/js/main.d1b201ef.chunk.js"
+    "static/js/main.af98952c.chunk.js"
   ]
 }
