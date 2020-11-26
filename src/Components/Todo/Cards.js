@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBIcon } from 'mdbreact';
+import Spinner from "../Spinner/Spinner"
 import { Stars } from "react-star-ratings";
 import StarRatings from "react-star-ratings";
-const axios = require('axios');
+import axios from "axios"
 
 let APIurl =
     "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
@@ -33,40 +34,33 @@ const Cards = ({ country }) => {
         GetPlaces()
     }, [country, setPlases])
 
-    return (
+    return loading ? <Spinner /> : (
         <>
             <div className="cards">
                 {
-                    places.map((place, i) => {
-                        const uri = `${PhotoAPI}${place.photos[0].photo_reference}&key=${key}`
-                        return (
-                            < MDBCard className="card" key={i} >
-                                <MDBCardImage className="img-fluid"
-                                    src={uri}
-                                    waves
-                                />
+                    places.map((place, i) => (
+                        < MDBCard className="card" key={i} >
+                            <MDBCardImage waves className="img-fluid"
+                                src={place.photos ? (`${PhotoAPI}${place.photos[0].photo_reference}&key=${key}`) : null}
+                            />
 
-                                <MDBCardBody>
-                                    <MDBCardTitle>
-                                        <strong>{place.name}</strong>
-                                    </MDBCardTitle>
-                                    <p>
-                                        <MDBIcon icon="umbrella-beach" /> Beaches
-                                    </p>
-                                    <img style={{ width: '20px', height: '20px' }} src={place.icon} alt="" />
-                                    <p>{place.types}</p>
-                                    <p>
-                                        {place.formatted_address}
-                                    </p>
+                            <MDBCardBody>
+                                <MDBCardTitle>
+                                    <strong>{place.name}</strong>
+                                </MDBCardTitle>
+                                
+                                <p> <img style={{ width: '20px', height: '20px', marginRight: '5px' }} src={place.icon} alt="" />
+                                    {place.types[0]}</p>
+                                <p>
+                                    {(place.plus_code.compound_code).slice(8)}
+                                </p>
 
 
-                                    <MDBBtn href="!#"><MDBIcon icon="map-marker-alt mr-2" />View Map</MDBBtn>
-                                </MDBCardBody>
+                                <MDBBtn href="!#"><MDBIcon icon="map-marker-alt mr-2" />View Map</MDBBtn>
+                            </MDBCardBody>
 
-                            </MDBCard>
-                        )
-                    }
-                    )
+                        </MDBCard>
+                    ))
                 }
             </div>
         </>
@@ -98,4 +92,5 @@ https://maps.googleapis.com/maps/api/place/details/json?key=${key}&place_id=ChIJ
  />
   </h4>
 
+   <MDBIcon icon="umbrella-beach" /> Beaches
 */

@@ -21,9 +21,13 @@ const FilterTabs = () => {
         <div className={classes.root}>
             
             <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                <Button>One</Button>
-                <Button>Two</Button>
-                <Button>Three</Button>
+                <Button>Hotels</Button>
+                <Button>Restaurants</Button>
+                <Button>Amusements</Button>
+                <Button>Parks</Button>
+                <Button>Sport</Button>
+                <Button>Churches</Button>
+                <Button>Tourist Attractions</Button>
             </ButtonGroup>
         </div>
     );

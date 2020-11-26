@@ -2,34 +2,35 @@ import React, { useEffect, useState } from "react";
 import GoogleMapReact from "google-map-react";
 import Spinner from "../Spinner/Spinner"
 import { FaLocationArrow } from 'react-icons/fa';
-
+import axios from "axios"
 
 let APIurl =
     "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch";
 const key = process.env.REACT_APP_GOOGLE_KEY;
 
 
-
-
 const Map = ({ city, setPlaceId, center, setCenter }) => {
 
-        const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
+    const GetCountries = async () => {
         if (city) {
             setLoading(true);
-            fetch(`${APIurl}/json?query=${city}&language=en&key=${key}`)
-                .then((res) => res.json())
-                .then((data) => {
-                    data && data.results[0] &&
-                        setCenter(data.results[0].geometry.location);
-                    // console.log(data)
-
-                    data.results[0] && setPlaceId(data.results[0].place_id);
-
-                });
+            try {
+                const resp = await axios.get(`${APIurl}/json?query=${city}&language=en&key=${key}`);
+                resp.data && resp.data.results[0] &&
+                    setCenter(resp.data.results[0].geometry.location);
+                resp.data.results[0] &&
+                    setPlaceId(resp.data.results[0].place_id);
+            } catch (err) {
+                console.error(err);
+            }
             setLoading(false)
         }
+    };
+
+    useEffect(() => {
+        GetCountries()
     }, [city, setCenter, setPlaceId]);
 
     const LocationPin = () => (

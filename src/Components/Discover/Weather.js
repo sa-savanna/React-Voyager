@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "../Spinner/Spinner"
-
+import axios from "axios"
 
 const APIurl =
     "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details";
@@ -13,36 +13,37 @@ const Weather = ({ placeId, center }) => {
     const [photos, setPhotos] = useState([]);
     const [weatherObj, setWeatherObj] = useState(null);
     const [loading, setLoading] = useState(true)
-   
-    useEffect(() => {
-        // console.log(center);
+
+
+    const getInfo = async () => {
         if (placeId) {
             setLoading(true)
-            fetch(`${APIurl}/json?key=${key}&place_id=${placeId}&fields=photos`)
-                .then((data) => data.json())
-                .then((imgs) => setPhotos(imgs.result.photos));
-
-            fetch(
-                `https://api.openweathermap.org/data/2.5/weather?lat=${center.lat}&lon=${center.lng}&appid=98cb06cb2b40f453cd89033992ff765a&units=metric`
-            )
-                .then((data) => data.json())
-                .then((weather) => {
-
-                    setWeatherObj(weather);
-                });
+            try {
+                const imgs = await axios.get(`${APIurl}/json?key=${key}&place_id=${placeId}&fields=photos`);
+                setPhotos(imgs.result.photos);
+                const weather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${center.lat}&lon=${center.lng}&appid=98cb06cb2b40f453cd89033992ff765a&units=metric`)
+                setWeatherObj(weather)
+            } catch (err) {
+                console.error(err);
+            }
             setLoading(false)
         }
+    };
+
+
+    useEffect(() => {
+        getInfo()
     }, [placeId, center]);
 
 
     const altOfPhoto = (attr) => {
         let first = attr.indexOf('>')
-        let second = attr.slice(first).substring(1)
+        let second = attr.slice(first).substring(1) //takes characters caracters before '>' and delete first character
         return second.substring(0, second.length - 4);
     }
 
 
-    return loading ? <Spinner /> :(
+    return loading ? <Spinner /> : (
         <div className="weather">
             <div className="photos">
                 <p>Photos of the city</p>

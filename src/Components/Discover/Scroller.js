@@ -1,14 +1,14 @@
 import React, { useState, useLayoutEffect, useEffect } from "react";
 import Radium from "radium";
+import axios from "axios"
+
 
 function shuffle(array) {
     var currentIndex = array.length,
         temporaryValue,
         randomIndex;
 
-
     while (0 !== currentIndex) {
-
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
 
@@ -36,17 +36,26 @@ const Scroller = Radium(({ setCity, capital, country, code }) => {
             });
         }
     };
-    useEffect(() => {
-        fetch(
-            "https://raw.githubusercontent.com/russ666/all-countries-and-cities-json/master/countries.json"
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                let shuffled = shuffle(data[coun])
-                setCities(shuffled);
-                setFullCitiesList(shuffled)
 
-            });
+    const GetPlaces = async () => {
+
+        try {
+            const resp = await axios.get('https://raw.githubusercontent.com/russ666/all-countries-and-cities-json/master/countries.json');
+            // console.log(resp.data[coun]);
+            let shuffled = shuffle(resp.data[coun])
+            setCities(shuffled);
+            setFullCitiesList(shuffled)
+        } catch (err) {
+            console.error(err);
+            return <p> OOPS... it seems there's no information </p>
+
+        }
+
+    };
+
+
+    useEffect(() => {
+        GetPlaces()
     }, [code, coun]);
 
     useLayoutEffect(() => {

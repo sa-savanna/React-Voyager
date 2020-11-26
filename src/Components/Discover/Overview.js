@@ -6,7 +6,7 @@ import Topbar from "./Topbar";
 import Map from "./Map";
 import Weather from "./Weather";
 import Spinner from "../Spinner/Spinner"
-
+import axios from "axios"
 
 const Overview = () => {
     const [city, setCity] = useState("");
@@ -17,20 +17,22 @@ const Overview = () => {
     const [code, setCode] = useState('')
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
+    const GetCountries = async () => {
         if (country) {
-            setLoading(true);
-            fetch(`https://restcountries.eu/rest/v2/name/${country}`)
-                .then((res) => res.json())
-                .then((data) => {
-                    setData(data[0]);
-                    setCode(data[0].alpha2Code)
-                    //   console.log(data) 
-                    // console.log(data[0].alpha2Code)
-                });
+            setLoading(true)
+            try {
+                const resp = await axios.get(`https://restcountries.eu/rest/v2/name/${country}`);
+                setData(resp.data[0]);
+                setCode(resp.data[0].alpha2Code)
+            } catch (err) {
+                console.error(err);
+            }
             setLoading(false)
         }
+    };
 
+    useEffect(() => {
+        GetCountries()
     }, [country]);
 
     return loading ? <Spinner /> : (
@@ -50,9 +52,9 @@ const Overview = () => {
                     setCenter={setCenter}
                 />
                 <Weather placeId={placeId} center={center} />
-               
-            </div> 
-            
+
+            </div>
+
         </>
     );
 };

@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-
+import axios from "axios"
 
 
 const InputSearch = () => {
     const [countries, setCountries] = useState([]);
-    //  const [countrySelected, setCountrySelected] = useState ('');
+
+    const GetCountries = async () => {
+        try {
+            const resp = await axios.get('https://cors-anywhere.herokuapp.com/http://country.io/names.json');
+            // console.log(resp.data);
+            setCountries(Object.values(resp.data))
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
 
     useEffect(() => {
-        fetch('https://cors-anywhere.herokuapp.com/http://country.io/names.json')
-            .then((res) => res.json())
-            .then((data) => {
-                // console.log(data)
-                setCountries(Object.values(data))
-            });
+        GetCountries()
     }, [])
-
-    //  useEffect(()=>{
-    //      if(countrySelected ){
-    //     passCountry(countrySelected) }
-    //  },[countrySelected])
 
 
     return (
         <Autocomplete
             onChange={e => {
                 console.log(e.target.innerText)
-                window.location.href = `/React-Voyager/#/overview/${e.target.innerText}`
+                window.location.href = `/#/overview/${e.target.innerText}`
             }}
             style={{ flexGrow: 1 }}
             id="countryInput"
