@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/React-Voyager/static/css/main.59ab022d.chunk.css",
-    "main.js": "/React-Voyager/static/js/main.a8c175f8.chunk.js",
-    "main.js.map": "/React-Voyager/static/js/main.a8c175f8.chunk.js.map",
+    "main.js": "/React-Voyager/static/js/main.d1b201ef.chunk.js",
+    "main.js.map": "/React-Voyager/static/js/main.d1b201ef.chunk.js.map",
     "runtime-main.js": "/React-Voyager/static/js/runtime-main.4d0a3caa.js",
     "runtime-main.js.map": "/React-Voyager/static/js/runtime-main.4d0a3caa.js.map",
     "static/css/2.7710c4ff.chunk.css": "/React-Voyager/static/css/2.7710c4ff.chunk.css",
-    "static/js/2.e9aab7b4.chunk.js": "/React-Voyager/static/js/2.e9aab7b4.chunk.js",
-    "static/js/2.e9aab7b4.chunk.js.map": "/React-Voyager/static/js/2.e9aab7b4.chunk.js.map",
+    "static/js/2.6a5624e8.chunk.js": "/React-Voyager/static/js/2.6a5624e8.chunk.js",
+    "static/js/2.6a5624e8.chunk.js.map": "/React-Voyager/static/js/2.6a5624e8.chunk.js.map",
     "index.html": "/React-Voyager/index.html",
-    "precache-manifest.0e113723c390edc602bca9810a949e2f.js": "/React-Voyager/precache-manifest.0e113723c390edc602bca9810a949e2f.js",
+    "precache-manifest.41fa617c1027e9713a4d2f5c92f100c8.js": "/React-Voyager/precache-manifest.41fa617c1027e9713a4d2f5c92f100c8.js",
     "service-worker.js": "/React-Voyager/service-worker.js",
     "static/css/2.7710c4ff.chunk.css.map": "/React-Voyager/static/css/2.7710c4ff.chunk.css.map",
     "static/css/main.59ab022d.chunk.css.map": "/React-Voyager/static/css/main.59ab022d.chunk.css.map",
-    "static/js/2.e9aab7b4.chunk.js.LICENSE.txt": "/React-Voyager/static/js/2.e9aab7b4.chunk.js.LICENSE.txt",
+    "static/js/2.6a5624e8.chunk.js.LICENSE.txt": "/React-Voyager/static/js/2.6a5624e8.chunk.js.LICENSE.txt",
     "static/media/Brazil.jpg": "/React-Voyager/static/media/Brazil.4987e8ac.jpg",
     "static/media/France.jpg": "/React-Voyager/static/media/France.96d56c45.jpg",
     "static/media/Japan_1920.jpg": "/React-Voyager/static/media/Japan_1920.8fdbb3a7.jpg",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.4d0a3caa.js",
     "static/css/2.7710c4ff.chunk.css",
-    "static/js/2.e9aab7b4.chunk.js",
+    "static/js/2.6a5624e8.chunk.js",
     "static/css/main.59ab022d.chunk.css",
-    "static/js/main.a8c175f8.chunk.js"
+    "static/js/main.d1b201ef.chunk.js"
   ]
 }
