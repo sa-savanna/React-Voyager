@@ -5,23 +5,24 @@ import SideBar from './SideBar';
 import Cards from "./Cards"
 import FilterTabs from './FilterTabs';
 import Breadcrumb from './BreadCrumb';
+import { useParams } from 'react-router-dom';
 
 
+const Actions = () => {
+    const { country } = useParams();
 
-const Actions = ({ country }) => {
 
-    console.log(country);
     return (
         <>
             <Navigation country={country} />
+            <FilterTabs />
             <div className="container-todo">
                 <div className="Sidebar">
                     <SideBar />
                 </div>
-                <div className="Tabpanel">
-                    <FilterTabs />
-                    <Breadcrumb />
-                    
+                <div className="Main">
+                    <Breadcrumb country={country} />
+                    <Cards country={country} />
                 </div>
 
 
