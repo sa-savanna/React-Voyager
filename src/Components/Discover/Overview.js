@@ -6,7 +6,7 @@ import Topbar from "./Topbar";
 import Map from "./Map";
 import Weather from "./Weather";
 import Spinner from "../Spinner/Spinner"
-import Actions from "../Todo/Actions";
+
 
 const Overview = () => {
     const [city, setCity] = useState("");
@@ -37,7 +37,7 @@ const Overview = () => {
         <>
             <Navigation country={country} />
             <div className="discover-wrapper">
-                {/* <Topbar data={data} />
+                <Topbar data={data} />
                 <Scroller
                     setCity={setCity}
                     capital={data.capital}
@@ -49,7 +49,7 @@ const Overview = () => {
                     center={center}
                     setCenter={setCenter}
                 />
-                <Weather placeId={placeId} center={center} /> */}
+                <Weather placeId={placeId} center={center} />
                
             </div> 
             
