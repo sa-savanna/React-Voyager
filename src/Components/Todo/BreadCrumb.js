@@ -5,7 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import Spinner from "../Spinner/Spinner"
-
+import AutoComplete from './AutoComplete';
+import Cards from './Cards';
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,33 +16,43 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function handleClick(event) {
-    event.preventDefault();
-    console.info('You clicked a breadcrumb.');
-}
+let APIurl =
+    "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
+let PointsAPI = '+point+of+interest&language=en&key='
 
-export default function BreadCrumb({ country }) {
+const PhotoAPI = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=";
+const key = process.env.REACT_APP_GOOGLE_KEY;
+
+
+export default function BreadCrumb({ country, region, loading, setLoading }) {
     const classes = useStyles();
     const theme = useTheme();
-    const [region, setRegion] = useState('')
-    const [capital, setCapital] = useState('')
 
-    const [loading, setLoading] = useState(true)
+    const [places, setPlaces] = useState([])
+
+
+    const GetPlaces = async () => {
+        setLoading(true)
+        try {
+            const resp = await axios.get(`${APIurl}${country}${PointsAPI}${key}`);
+            // console.log(resp.data.results);
+            setPlaces(resp.data.results)
+        } catch (err) {
+            console.error(err);
+        }
+        setLoading(false)
+    };
+
 
     useEffect(() => {
-        if (country) {
-            setLoading(true);
-            fetch(`https://restcountries.eu/rest/v2/name/${country}`)
-                .then((res) => res.json())
-                .then((data) => {
-                    setRegion(data[0].subregion);
-                    setCapital(data[0].capital)
-                });
-            setLoading(false)
-        }
+        GetPlaces()
+    }, [country, setPlaces])
 
-    }, [country]);
 
+    const handleClick = (event) => {
+        event.preventDefault();
+        console.info('You clicked a breadcrumb.');
+    }
 
     return loading ? <Spinner /> : (
         <div className={classes.root}>
@@ -54,6 +66,20 @@ export default function BreadCrumb({ country }) {
                 </Link>
                 {/* <Typography color="textPrimary"></Typography> */}
             </Breadcrumbs>
+            <div>
+                <AutoComplete
+                    APIurl={APIurl}
+                    PointsAPI={PointsAPI}
+                    key={key}
+                />
+
+            </div>
+
+            {
+                places.length === 0 ? (
+                    null
+                ) : <Cards places={places} loading={loading} PhotoAPI={PhotoAPI} />
+            }
         </div>
     );
 }

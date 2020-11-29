@@ -13,26 +13,9 @@ const PhotoAPI = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&
 const key = process.env.REACT_APP_GOOGLE_KEY;
 
 
-const Cards = ({ country }) => {
-    const [places, setPlases] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    const GetPlaces = async () => {
-        setLoading(true)
-        try {
-            const resp = await axios.get(`${APIurl}${country}${PointsAPI}${key}`);
-            console.log(resp.data.results);
-            setPlases(resp.data.results)
-        } catch (err) {
-            console.error(err);
-        }
-        setLoading(false)
-    };
+const Cards = ({ places,  loading, PhotoAPI }) => {
 
 
-    useEffect(() => {
-        GetPlaces()
-    }, [country, setPlases])
 
     return loading ? <Spinner /> : (
         <>
@@ -48,7 +31,7 @@ const Cards = ({ country }) => {
                                 <MDBCardTitle>
                                     <strong>{place.name}</strong>
                                 </MDBCardTitle>
-                                
+
                                 <p> <img style={{ width: '20px', height: '20px', marginRight: '5px' }} src={place.icon} alt="" />
                                     {place.types[0]}</p>
                                 <p>
