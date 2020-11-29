@@ -342,16 +342,14 @@ body {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
- 
-  
+  justify-content: space-between;
 }
 
 .cards .card {
   box-shadow: none;
   width: 239px;
   /* height: 150px;  */
-  margin: .7em;
+  margin: 0.7em;
 }
 
 .cards .card:hover {
@@ -371,7 +369,17 @@ body {
 .card h4 {
   font-size: 1rem;
 }
+.star-ratings {
+  line-height: 1;
+}
+.rating {
+  display: inline-flex;
+}
 
+.rating h4 {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
 .card img {
   width: 100%;
   height: 150px;

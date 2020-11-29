@@ -50,6 +50,7 @@ const Overview = () => {
                     setPlaceId={setPlaceId}
                     center={center}
                     setCenter={setCenter}
+                    code={code}
                 />
                 <Weather placeId={placeId} center={center} />
 

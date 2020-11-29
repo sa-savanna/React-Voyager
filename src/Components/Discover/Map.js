@@ -9,7 +9,7 @@ let APIurl =
 const key = process.env.REACT_APP_GOOGLE_KEY;
 
 
-const Map = ({ city, setPlaceId, center, setCenter }) => {
+const Map = ({ city, setPlaceId, center, setCenter, code }) => {
 
     const [loading, setLoading] = useState(true)
 
@@ -17,7 +17,7 @@ const Map = ({ city, setPlaceId, center, setCenter }) => {
         if (city) {
             setLoading(true);
             try {
-                const resp = await axios.get(`${APIurl}/json?query=${city}&language=en&key=${key}`);
+                const resp = await axios.get(`${APIurl}/json?query=${city}&language=en&region=${code}&key=${key}`);
                 resp.data && resp.data.results[0] &&
                     setCenter(resp.data.results[0].geometry.location);
                 resp.data.results[0] &&
@@ -31,7 +31,7 @@ const Map = ({ city, setPlaceId, center, setCenter }) => {
 
     useEffect(() => {
         GetCountries()
-    }, [city, setCenter, setPlaceId]);
+    }, [city, setCenter, setPlaceId, code]);
 
     const LocationPin = () => (
         <div className="pin">

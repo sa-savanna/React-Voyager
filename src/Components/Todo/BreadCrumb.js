@@ -18,24 +18,25 @@ const useStyles = makeStyles((theme) => ({
 
 let APIurl =
     "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
-let PointsAPI = '+point+of+interest&language=en&key='
+let PointsAPI = '+point+of+interest&language=en'
 
 const PhotoAPI = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=";
 const key = process.env.REACT_APP_GOOGLE_KEY;
 
 
-export default function BreadCrumb({ country, region, loading, setLoading }) {
+export default function BreadCrumb({ country, region, code }) {
     const classes = useStyles();
     const theme = useTheme();
 
     const [places, setPlaces] = useState([])
+    const [loading, setLoading] = useState(true)
 
 
     const GetPlaces = async () => {
         setLoading(true)
         try {
-            const resp = await axios.get(`${APIurl}${country}${PointsAPI}${key}`);
-            // console.log(resp.data.results);
+            const resp = await axios.get(`${APIurl}${country}${PointsAPI}&region=${code}&key=${key}`);
+            console.log(resp.data.results);
             setPlaces(resp.data.results)
         } catch (err) {
             console.error(err);
@@ -43,10 +44,10 @@ export default function BreadCrumb({ country, region, loading, setLoading }) {
         setLoading(false)
     };
 
-
+       
     useEffect(() => {
         GetPlaces()
-    }, [country, setPlaces])
+    }, [country, setPlaces, code])
 
 
     const handleClick = (event) => {
@@ -67,11 +68,11 @@ export default function BreadCrumb({ country, region, loading, setLoading }) {
                 {/* <Typography color="textPrimary"></Typography> */}
             </Breadcrumbs>
             <div>
-                <AutoComplete
+                {/* <AutoComplete 
                     APIurl={APIurl}
                     PointsAPI={PointsAPI}
                     key={key}
-                />
+                /> */}
 
             </div>
 

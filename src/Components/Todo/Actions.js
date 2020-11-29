@@ -11,6 +11,7 @@ import axios from "axios";
 const Actions = () => {
     const { country } = useParams();
     const [region, setRegion] = useState('')
+    const [code, setCode] = useState('')
     const [loading, setLoading] = useState(true)
 
     const GetCountry = async () => {
@@ -20,7 +21,7 @@ const Actions = () => {
                 const resp = await axios.get(`https://restcountries.eu/rest/v2/name/${country}`);
                 // console.log(resp.data.results);
                 setRegion(resp.data[0].subregion);
-
+                setCode(resp.data[0].alpha2Code)
             } catch (err) {
                 console.error(err);
             }
@@ -44,7 +45,7 @@ const Actions = () => {
                     <SideBar />
                 </div>
                 <div className="Main">
-                    <Breadcrumb country={country} region={region} loading={loading} setLoading={setLoading} />
+                    <Breadcrumb country={country} region={region} code={code} />
                 </div>
 
 

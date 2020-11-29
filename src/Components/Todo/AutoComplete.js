@@ -81,8 +81,8 @@ const AutoComplete = ({ places, setLoading, APIurl, PointsAPI, key }) => {
                         )}
                     </div>
                     {results.length === 0 ? null : (
-                        loading ? <Spinner/> : 
-                        <Cards places={results} />
+                        
+                        <Cards places={places} />
                     )}
                 </>
             )}

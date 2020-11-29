@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBIcon } from 'mdbreact';
 import Spinner from "../Spinner/Spinner"
-import { Stars } from "react-star-ratings";
 import StarRatings from "react-star-ratings";
 import axios from "axios"
 
@@ -13,7 +12,7 @@ const PhotoAPI = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&
 const key = process.env.REACT_APP_GOOGLE_KEY;
 
 
-const Cards = ({ places,  loading, PhotoAPI }) => {
+const Cards = ({ places, loading, PhotoAPI }) => {
 
 
 
@@ -22,27 +21,44 @@ const Cards = ({ places,  loading, PhotoAPI }) => {
             <div className="cards">
                 {
                     places.map((place, i) => (
-                        < MDBCard className="card" key={i} >
-                            <MDBCardImage waves className="img-fluid"
-                                src={place.photos ? (`${PhotoAPI}${place.photos[0].photo_reference}&key=${key}`) : null}
-                            />
 
-                            <MDBCardBody>
-                                <MDBCardTitle>
-                                    <strong>{place.name}</strong>
-                                </MDBCardTitle>
+                        place.photos ? (
 
-                                <p> <img style={{ width: '20px', height: '20px', marginRight: '5px' }} src={place.icon} alt="" />
-                                    {place.types[0]}</p>
-                                <p>
-                                    {(place.plus_code.compound_code).slice(8)}
-                                </p>
+                            < MDBCard className="card" key={i} >
+                                <MDBCardImage waves className="img-fluid"
+                                    src={`${PhotoAPI}${place.photos[0].photo_reference}&key=${key}`}
+                                />
 
+                                <MDBCardBody>
+                                    <MDBCardTitle>
+                                        <strong>{place.name}</strong>
+                                    </MDBCardTitle>
 
-                                <MDBBtn href="!#"><MDBIcon icon="map-marker-alt mr-2" />View Map</MDBBtn>
-                            </MDBCardBody>
+                                    <p> <img style={{ width: '20px', height: '20px', marginRight: '5px' }} src={place.icon} alt="" />
+                                        {place.types[0]}</p>
+                                    <p>
+                                        {place.plus_code ? (place.plus_code.compound_code).slice(8) : null}
+                                    </p>
+                                    <hr />
 
-                        </MDBCard>
+                                    <div className='rating'>
+                                        <h4>
+                                            {place.rating}
+                                        </h4>
+                                        <StarRatings
+                                            rating={place.rating}
+                                            starDimension="20px"
+                                            starSpacing="5px"
+                                            starRatedColor="#ffc107"
+                                        />
+
+                                    </div>
+                                    <MDBBtn href="!#"><MDBIcon icon="map-marker-alt mr-2" />View Map</MDBBtn>
+                                </MDBCardBody>
+
+                            </MDBCard>
+                        ) : null
+
                     ))
                 }
             </div>
