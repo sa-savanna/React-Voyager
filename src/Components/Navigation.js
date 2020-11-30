@@ -40,10 +40,10 @@ export const Navigation = ({ country }) => {
                         <Link className={classes.link} href="/" color="inherit">
                             Home
                         </Link>
-                        <Link className={classes.link} href={`/#/overview/${country}`} color="inherit">
+                        <Link className={classes.link} href={`/React-Voyager/#/overview/${country}`} color="inherit">
                             Discover
                         </Link>
-                        <Link className={classes.link} href={`/#/whattodo/${country}`} color="inherit">
+                        <Link className={classes.link} href={`/React-Voyager/#/whattodo/${country}`} color="inherit">
                             Todo
                         </Link> 
                     </Toolbar>

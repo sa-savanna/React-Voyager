@@ -18,6 +18,7 @@ const Map = ({ city, setPlaceId, center, setCenter, code }) => {
             setLoading(true);
             try {
                 const resp = await axios.get(`${APIurl}/json?query=${city}&language=en&region=${code}&key=${key}`);
+                //https://maps.googleapis.com/maps/api/place/textsearch/json?query=lot&language=en&region=be&key=
                 resp.data && resp.data.results[0] &&
                     setCenter(resp.data.results[0].geometry.location);
                 resp.data.results[0] &&

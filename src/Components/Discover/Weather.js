@@ -21,7 +21,7 @@ const Weather = ({ placeId, center }) => {
             fetch(`${APIurl}/json?key=${key}&place_id=${placeId}&fields=photos`)
                 .then((data) => data.json())
                 .then((imgs) => setPhotos(imgs.result.photos));
-
+            
             fetch(
                 `https://api.openweathermap.org/data/2.5/weather?lat=${center.lat}&lon=${center.lng}&appid=98cb06cb2b40f453cd89033992ff765a&units=metric`
             )
