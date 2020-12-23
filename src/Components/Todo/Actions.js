@@ -47,9 +47,6 @@ const Actions = () => {
                 <div className="Main">
                     <Breadcrumb country={country} region={region} code={code} />
                 </div>
-
-
-
             </div>
         </>
     )

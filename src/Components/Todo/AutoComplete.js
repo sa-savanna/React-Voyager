@@ -5,26 +5,17 @@ import { Spinner } from 'react-bootstrap';
 import Cards from './Cards';
 
 
-const AutoComplete = ({ places, setLoading, APIurl, PointsAPI, key }) => {
+const AutoComplete = (props) => {
 
     const [results, setResults] = useState('')
 
-    const GetPlaces = async () => {
-        
-        try {
-            const resp = await axios.get(`${APIurl}${places}${PointsAPI}${key}`);
-            // console.log(resp.data.results);
-            setResults(...results, resp.data.results)
-        } catch (err) {
-            console.error(err);
-        }
-       
-    };
 
+    const changeCardsList = (e) => {
+        console.log(e.target.value);
+        const updateResults = e.target.value
+        // setResults(updateResults)
+    }
 
-    useEffect(() => {
-        GetPlaces()
-    }, [places, setResults])
 
     const handleSelect = async (value) => {
         try {
@@ -37,11 +28,12 @@ const AutoComplete = ({ places, setLoading, APIurl, PointsAPI, key }) => {
         }
     }
 
+  
 
     return (
         <PlacesAutocomplete
             value={results}
-            onChange={setResults}
+            onChange={changeCardsList}
             onSelect={handleSelect}
         >
             {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
@@ -81,8 +73,8 @@ const AutoComplete = ({ places, setLoading, APIurl, PointsAPI, key }) => {
                         )}
                     </div>
                     {results.length === 0 ? null : (
-                        
-                        <Cards places={places} />
+
+                        <Cards places={props.places} />
                     )}
                 </>
             )}

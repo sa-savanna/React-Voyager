@@ -37,7 +37,7 @@ export const Navigation = ({ country }) => {
                             {country}
                         </Typography>
                         <InputSearch />
-                        <Link className={classes.link} href="/" color="inherit">
+                        <Link className={classes.link} href="/React-Voyager/#/" color="inherit">
                             Home
                         </Link>
                         <Link className={classes.link} href={`/React-Voyager/#/overview/${country}`} color="inherit">

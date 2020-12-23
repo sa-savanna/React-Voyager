@@ -24,6 +24,8 @@ const PhotoAPI = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&
 const key = process.env.REACT_APP_GOOGLE_KEY;
 
 
+
+
 export default function BreadCrumb({ country, region, code }) {
     const classes = useStyles();
     const theme = useTheme();
@@ -44,7 +46,7 @@ export default function BreadCrumb({ country, region, code }) {
         setLoading(false)
     };
 
-       
+
     useEffect(() => {
         GetPlaces()
     }, [country, setPlaces, code])
@@ -68,11 +70,12 @@ export default function BreadCrumb({ country, region, code }) {
                 {/* <Typography color="textPrimary"></Typography> */}
             </Breadcrumbs>
             <div>
-                {/* <AutoComplete 
+                <AutoComplete
                     APIurl={APIurl}
                     PointsAPI={PointsAPI}
                     key={key}
-                /> */}
+                    places={places}
+                />
 
             </div>
 
