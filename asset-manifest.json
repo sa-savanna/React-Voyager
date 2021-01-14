@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/React-Voyager/static/css/main.7b113041.chunk.css",
-    "main.js": "/React-Voyager/static/js/main.c241bb13.chunk.js",
-    "main.js.map": "/React-Voyager/static/js/main.c241bb13.chunk.js.map",
+    "main.js": "/React-Voyager/static/js/main.51ac8ef6.chunk.js",
+    "main.js.map": "/React-Voyager/static/js/main.51ac8ef6.chunk.js.map",
     "runtime-main.js": "/React-Voyager/static/js/runtime-main.4d0a3caa.js",
     "runtime-main.js.map": "/React-Voyager/static/js/runtime-main.4d0a3caa.js.map",
-    "static/css/2.7710c4ff.chunk.css": "/React-Voyager/static/css/2.7710c4ff.chunk.css",
-    "static/js/2.5cba1514.chunk.js": "/React-Voyager/static/js/2.5cba1514.chunk.js",
-    "static/js/2.5cba1514.chunk.js.map": "/React-Voyager/static/js/2.5cba1514.chunk.js.map",
+    "static/css/2.257bbb84.chunk.css": "/React-Voyager/static/css/2.257bbb84.chunk.css",
+    "static/js/2.fc6414aa.chunk.js": "/React-Voyager/static/js/2.fc6414aa.chunk.js",
+    "static/js/2.fc6414aa.chunk.js.map": "/React-Voyager/static/js/2.fc6414aa.chunk.js.map",
     "index.html": "/React-Voyager/index.html",
-    "precache-manifest.f88cd0afe613434a9a8b34247e414f7c.js": "/React-Voyager/precache-manifest.f88cd0afe613434a9a8b34247e414f7c.js",
+    "precache-manifest.7fb98aa3508119edba5546e2a283af6a.js": "/React-Voyager/precache-manifest.7fb98aa3508119edba5546e2a283af6a.js",
     "service-worker.js": "/React-Voyager/service-worker.js",
-    "static/css/2.7710c4ff.chunk.css.map": "/React-Voyager/static/css/2.7710c4ff.chunk.css.map",
+    "static/css/2.257bbb84.chunk.css.map": "/React-Voyager/static/css/2.257bbb84.chunk.css.map",
     "static/css/main.7b113041.chunk.css.map": "/React-Voyager/static/css/main.7b113041.chunk.css.map",
-    "static/js/2.5cba1514.chunk.js.LICENSE.txt": "/React-Voyager/static/js/2.5cba1514.chunk.js.LICENSE.txt",
+    "static/js/2.fc6414aa.chunk.js.LICENSE.txt": "/React-Voyager/static/js/2.fc6414aa.chunk.js.LICENSE.txt",
     "static/media/Brazil.jpg": "/React-Voyager/static/media/Brazil.4987e8ac.jpg",
     "static/media/France.jpg": "/React-Voyager/static/media/France.96d56c45.jpg",
     "static/media/Japan_1920.jpg": "/React-Voyager/static/media/Japan_1920.8fdbb3a7.jpg",
@@ -25,9 +25,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4d0a3caa.js",
-    "static/css/2.7710c4ff.chunk.css",
-    "static/js/2.5cba1514.chunk.js",
+    "static/css/2.257bbb84.chunk.css",
+    "static/js/2.fc6414aa.chunk.js",
     "static/css/main.7b113041.chunk.css",
-    "static/js/main.c241bb13.chunk.js"
+    "static/js/main.51ac8ef6.chunk.js"
   ]
 }
