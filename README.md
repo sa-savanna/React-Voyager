@@ -22,7 +22,7 @@ The project needs to be finished but the main idea was accomplished.
 
 I used some components from MDB https://mdbootstrap.com/docs/react/components/demo/
 
-And I use Material design <npm install @material-ui/core>
+And I use Material design https://material-ui.com/getting-started/installation/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
